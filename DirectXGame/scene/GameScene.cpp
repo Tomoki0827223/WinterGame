@@ -276,6 +276,7 @@ void GameScene::Initialize(uint32_t StageNumber_) {
 
 void GameScene::Update() {
 
+
 	switch (phase_) {
 	case Phase::kPlay:
 
