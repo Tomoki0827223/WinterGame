@@ -172,38 +172,38 @@ void Player::Attack() {
 
 	ShotTimer_--;
 
-	if (input_->TriggerKey(DIK_SPACE)) {
-		if (ShotTimer_ <= 0 && burstShotCount_ == 0) {
-			// バースト開始時の準備
-			ShotTimer_ = 60;                  // 次のバーストまでの待機時間
-			burstShotCount_ = kMaxBurstShots; // バースト弾数のリセット
-			burstTimer_ = 0;                  // バーストタイマーのリセット
-		}
-	}
+	//if (input_->TriggerKey(DIK_SPACE)) {
+	//	if (ShotTimer_ <= 0 && burstShotCount_ == 0) {
+	//		// バースト開始時の準備
+	//		ShotTimer_ = 60;                  // 次のバーストまでの待機時間
+	//		burstShotCount_ = kMaxBurstShots; // バースト弾数のリセット
+	//		burstTimer_ = 0;                  // バーストタイマーのリセット
+	//	}
+	//}
 
-	if (burstShotCount_ > 0) {
-		// バースト発射中
-		if (burstTimer_ <= 0) {
-			// 弾を発射
-			const float kBulletSpeed = 1.0f;
-			Vector3 localDirection = {0.0f, 0.0f, kBulletSpeed};
-			Vector3 velocity = TransformNormal(localDirection, worldTransform_.matWorld_);
+	//if (burstShotCount_ > 0) {
+	//	// バースト発射中
+	//	if (burstTimer_ <= 0) {
+	//		// 弾を発射
+	//		const float kBulletSpeed = 1.0f;
+	//		Vector3 localDirection = {0.0f, 0.0f, kBulletSpeed};
+	//		Vector3 velocity = TransformNormal(localDirection, worldTransform_.matWorld_);
 
-			PlayerBullet* newBullet = new PlayerBullet();
-			newBullet->Initialize(bulletmodel_, worldTransform_.translation_, velocity);
-			bullets_.push_back(newBullet);
+	//		PlayerBullet* newBullet = new PlayerBullet();
+	//		newBullet->Initialize(bulletmodel_, worldTransform_.translation_, velocity);
+	//		bullets_.push_back(newBullet);
 
-			// サウンド再生
-			shotHandle_ = audio_->PlayWave(shotSE_, false, 1.0f);
+	//		// サウンド再生
+	//		shotHandle_ = audio_->PlayWave(shotSE_, false, 1.0f);
 
-			// 次の弾の準備
-			burstShotCount_--;
-			burstTimer_ = kBurstInterval; // バースト間隔のリセット
-		} else {
-			// バースト間隔タイマーのカウントダウン
-			burstTimer_--;
-		}
-	}
+	//		// 次の弾の準備
+	//		burstShotCount_--;
+	//		burstTimer_ = kBurstInterval; // バースト間隔のリセット
+	//	} else {
+	//		// バースト間隔タイマーのカウントダウン
+	//		burstTimer_--;
+	//	}
+	//}
 
 	//if (input_->PushKey(DIK_SPACE)) {
 	//	
