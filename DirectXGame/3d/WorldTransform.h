@@ -30,6 +30,10 @@ public:
 	WorldTransform() = default;
 	~WorldTransform() = default;
 
+	void UpdateMatrix();
+
+	bool IsHit(const Vector3& bulletPosition) const;
+
 	/// <summary>
 	/// 初期化
 	/// </summary>
