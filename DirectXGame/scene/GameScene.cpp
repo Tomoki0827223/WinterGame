@@ -104,7 +104,15 @@ GameScene::~GameScene() {
 	delete enemySkydome_;
 	delete modelEnemySkydome_;
 	delete enemySkydome1_;
+	delete enemySkydome2_;
+	delete enemySkydome3_;
+	delete enemySkydome4_;
+	delete enemySkydome5_;
 	delete modelEnemySkydome1_;
+	delete modelEnemySkydome2_;
+	delete modelEnemySkydome3_;
+	delete modelEnemySkydome4_;
+	delete modelEnemySkydome5_;
 
 	// bullets_ に格納された PlayerBullet インスタンスを解放
 	for (PlayerBullet* bullet : Playerbullets_) {
